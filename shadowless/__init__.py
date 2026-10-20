@@ -7,6 +7,7 @@
 - clipboard: 剪貼板操作
 - captcha: 驗證碼突破
 - electric_eye: 電眼聯動接口
+- electric_eye_advanced: 電眼高級版（預判+權重分析）
 """
 
 from shadowless.mouse import HumanMouse
@@ -14,6 +15,8 @@ from shadowless.keyboard import HumanKeyboard
 from shadowless.clipboard import Clipboard
 from shadowless.captcha.slider import SliderBypass
 from shadowless.captcha.click import ClickBypass
+from shadowless.electric_eye import ElectricEyeInterface
+from shadowless.electric_eye_advanced import ElectricEyeAdvanced
 
 __version__ = "1.0.0"
 __author__ = "小白 (矽靈) & 趙亮"

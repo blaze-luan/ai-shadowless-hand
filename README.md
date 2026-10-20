@@ -50,6 +50,38 @@ hand.execute({
 })
 ```
 
+### 4. 電眼高級版（預判 + 權重分析）
+
+升級版電眼，具備學習和預判能力：
+
+```python
+from shadowless import ElectricEyeAdvanced
+
+eye = ElectricEyeAdvanced()
+
+# 分析當前狀態並預測最佳操作
+analysis = eye.analyze_and_predict({
+    "captcha_type": "slider",
+    "page_domain": "example.com"
+})
+
+print(f"推薦操作：{analysis['prediction']['predicted_action']}")
+print(f"置信度：{analysis['prediction']['confidence']:.2%}")
+
+# 記錄操作結果，持續學習
+eye.record_result("smart_drag", success=True)
+
+# 導出/導入學習到的知識
+knowledge = eye.export_knowledge()  # 導出
+eye.import_knowledge(knowledge)     # 導入
+```
+
+**核心能力：**
+- **預判引擎**：基於歷史操作模式預測最佳策略
+- **權重分析**：多策略動態評分，自動淘汰低效策略
+- **自適應學習**：根據成功/失敗結果調整權重
+- **知識持久化**：導出學習成果，跨會話復用
+
 ## 安裝
 
 ```bash
